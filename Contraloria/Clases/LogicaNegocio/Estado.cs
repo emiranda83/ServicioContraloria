@@ -9,7 +9,7 @@ namespace Contraloria.Clases.LogicaNegocio
     {
         private int id;
         private string nombre;
-        private int activo;
+        private int estado1;
 
         public int Id
         {
@@ -37,25 +37,14 @@ namespace Contraloria.Clases.LogicaNegocio
             }
         }
 
-        public int Activo
-        {
-            get
-            {
-                return activo;
-            }
-
-            set
-            {
-                activo = value;
-            }
-        }
-
+        
 
         public Estado (int id, string nombre, int estado)
         {
             this.id = Id;
             this.nombre = Nombre;
-            this.activo = Activo;
+            this.estado1 = Estado1;
+            
         }
 
 
@@ -63,16 +52,29 @@ namespace Contraloria.Clases.LogicaNegocio
         {
             this.id = 0;
             this.nombre = Nombre;
-            this.activo = 1;
+            this.estado1 = 1;
         }
 
-        public string ActivoMostrar
+        public string EstadoMostrar
         {
             get
             {
-                return activo == 1 ? "ACTIVO" : "INACTIVO";
+                return estado1 == 1 ? "ACTIVO" : "INACTIVO";
             }
 
+        }
+
+        public int Estado1
+        {
+            get
+            {
+                return estado1;
+            }
+
+            set
+            {
+                estado1 = value;
+            }
         }
 
         public Estado()

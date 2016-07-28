@@ -54,7 +54,7 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 
             miComando.Parameters.Add("@vc_nombreEstado", SqlDbType.VarChar).Value = elEstado.Nombre; ;
             
-			miComando.Parameters.Add("@i_activoEstado", SqlDbType.Int).Value = elEstado.Activo;
+			miComando.Parameters.Add("@i_activoEstado", SqlDbType.Int).Value = elEstado.Estado1;
             
             
 
@@ -81,7 +81,7 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                 Estado  elEstado = new Estado();
                 elEstado.Id = int.Parse(elDato["i_PK_idEstado"].ToString());
                 elEstado.Nombre = elDato["vc_nombreEstado"].ToString();
-                elEstado.Activo = int.Parse(elDato["i_activoEstado"].ToString());
+                elEstado.Estado1 = int.Parse(elDato["i_activoEstado"].ToString());
 
                 return elEstado;
             }
@@ -113,14 +113,15 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                     Estado elEstado = new Estado();
                     elEstado.Id = int.Parse(elDato["id"].ToString());
                     elEstado.Nombre = elDato["nombre"].ToString();
-                    elEstado.Activo = int.Parse(elDato["activo"].ToString());
+                    elEstado.Estado1 = int.Parse(elDato["estado1"].ToString());                    
                     laLista.Add(elEstado);
                  
                 }
                 return laLista;
             }
-            catch
+            catch(Exception e)
             {
+
                 return null;
             }
 

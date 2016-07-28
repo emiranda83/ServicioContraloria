@@ -42,7 +42,7 @@ namespace  SENASA.ContraloriaServicios.Integracion.Integracion.Catalogo
             Estado elEstado = new Estado();
             elEstado.Id = i_PK_idEstado;
             elEstado.Nombre = vc_nombreEstado;
-            elEstado.Activo = i_activoEstado;
+            elEstado.Estado1 = i_activoEstado;
             using (ServicioEstado elServicioEstado = new ServicioEstado())
             return elServicioEstado.ModificarEstado(elEstado);
         }

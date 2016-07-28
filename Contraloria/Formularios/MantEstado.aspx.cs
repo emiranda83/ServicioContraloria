@@ -20,8 +20,8 @@ namespace Contraloria.Formularios
             if (!this.IsPostBack)
             {
 
-                Conexion.laConexion.Usuario = "sa";
-                Conexion.laConexion.Contrasena = "sasa";
+                Conexion.laConexion.Usuario = "requisitos_wr";
+                Conexion.laConexion.Contrasena = "rqst.0515";
 
                 CargarEstado();
             }
@@ -55,8 +55,8 @@ namespace Contraloria.Formularios
             {
                 txt_Id.Text = elEstado.Id.ToString();
                 txt_estado.Text = elEstado.Nombre;
-                cmb_estado.SelectedValue = elEstado.Activo.ToString();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoTramite').removeClass('esconderElemento');$('#divNuevoTramite').addClass('mostrarElemento');});", true);
+                cmb_estado.SelectedValue = elEstado.Estado1.ToString();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoEstado').removeClass('esconderElemento');$('#divNuevoEstado').addClass('mostrarElemento');});", true);
             }
 
 
@@ -83,7 +83,7 @@ namespace Contraloria.Formularios
                 {
 
                     ((SiteMaster)this.Master).MostrarMensaje("Datos Guardados");
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoTramite').removeClass('mostrarElemento');$('#divNuevoTramite').addClass('esconderElemento');});", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoEstado').removeClass('mostrarElemento');$('#divNuevoEstado').addClass('esconderElemento');});", true);
                     //limpiar
                     CargarEstado();
 
@@ -101,7 +101,7 @@ namespace Contraloria.Formularios
 
         protected void btn_Nuevo_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoTramite').removeClass('esconderElemento');$('#divNuevoTramite').addClass('mostrarElemento');});", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoEstado').removeClass('esconderElemento');$('#divNuevoEstado').addClass('mostrarElemento');});", true);
 
         }
     }
