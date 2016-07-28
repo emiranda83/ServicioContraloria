@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 <Conexion>
-  <server>SA000125\SQLEXPRESS</server>
+  <server>SA000123\SQLEXPRESS</server>
   <database>ServiciosContraloria</database>
   <direccionImagenFondo>\\172.20.2.80\appSADOC\SADOC\fondoSadoc_1.jpg</direccionImagenFondo>
   <reporte>C:\Github\Consulta_CVO\Reportes\</reporte>

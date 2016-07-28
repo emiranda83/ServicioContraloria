@@ -1,5 +1,6 @@
-
+USE ServiciosContraloria
 GO
+
 /****************************************************************************
 **
 ** Compania:    SENASA - MAG
@@ -18,8 +19,8 @@ as
 begin tran
 
 
-insert into Cat_Estado(vc_nombreEstado)
-values (@vc_nombreEstado)
+insert into Cat_Estado(vc_nombreEstado, i_activoEstado)
+values (@vc_nombreEstado, 1)
 
 
 
@@ -126,13 +127,13 @@ as
 begin 
 
 select
-i_PK_idEstado as PK,
-vc_nombreEstado as nombreEstado,
-i_activoEstado as activoEstado
+i_PK_idEstado as id,
+vc_nombreEstado as Nombre,
+case i_activoEstado when 1 then 'Activo' else 'Inactivo' end as Estado
 
 
 from Cat_Estado
-where   i_PK_idEstado + vc_nombreEstado like '%'+@filtro+'%'
+where   vc_nombreEstado like '%'+@filtro+'%'
 
 
 

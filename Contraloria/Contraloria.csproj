@@ -201,6 +201,7 @@
     <Content Include="Content\toastr.less" />
     <Content Include="Content\toastr.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Formularios\MantEstado.aspx" />
     <Content Include="Formularios\MantTramite.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -388,6 +389,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MantEstado.aspx.cs">
+      <DependentUpon>MantEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\MantEstado.aspx.designer.cs">
+      <DependentUpon>MantEstado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\MantTramite.aspx.cs">
       <DependentUpon>MantTramite.aspx</DependentUpon>

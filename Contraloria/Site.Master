@@ -65,6 +65,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrar<b class="caret"></b></a>
 <ul class="dropdown-menu"> 
 <li><a href="../Formularios/MantTramite.aspx">Trámites</a></li> 
+    <li><a href="../Formularios/MantEstado.aspx">Estado</a></li> 
 </ul></li>
 
                         <%--<li role="presentation">--%>

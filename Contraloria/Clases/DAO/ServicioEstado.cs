@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using Componentes.Sistemas.Clases;
 //using System.Linq;
 using System.Text;
+using Contraloria.Clases.LogicaNegocio;
 
 namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 {
@@ -29,12 +30,12 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
         { }
 
 		//Inserta  Estado
-        public String InsertarEstado(string vc_nombreEstado)
+        public String InsertarEstado(Estado elEstado) 
         {
             miComando.CommandText = "SPR_Cat_Estado_insertar";
 
-            
-			miComando.Parameters.Add("@vc_nombreEstado", SqlDbType.VarChar).Value = vc_nombreEstado;
+
+            miComando.Parameters.Add("@vc_nombreEstado", SqlDbType.VarChar).Value = elEstado.Nombre;
             
             
 
@@ -44,16 +45,16 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 
         }
 		//Modificar  Estado
-        public String ModificarEstado(int i_PK_idEstado,string vc_nombreEstado,int i_activoEstado)
+        public String ModificarEstado(Estado elEstado)
         {
             miComando.CommandText = "SPR_Cat_Estado_modificar";
 
+
+            miComando.Parameters.Add("@i_PK_idEstado", SqlDbType.Int).Value = elEstado.Id; ;
+
+            miComando.Parameters.Add("@vc_nombreEstado", SqlDbType.VarChar).Value = elEstado.Nombre; ;
             
-			miComando.Parameters.Add("@i_PK_idEstado", SqlDbType.Int).Value = i_PK_idEstado;
-            
-			miComando.Parameters.Add("@vc_nombreEstado", SqlDbType.VarChar).Value = vc_nombreEstado;
-            
-			miComando.Parameters.Add("@i_activoEstado", SqlDbType.Int).Value = i_activoEstado;
+			miComando.Parameters.Add("@i_activoEstado", SqlDbType.Int).Value = elEstado.Activo;
             
             
 
@@ -63,7 +64,7 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 
         }
 		//Consultar  Estado
-        public DataRow ConsultarEstado(int i_PK_idEstado)
+        public Estado  ConsultarEstado(int i_PK_idEstado)
         {
             miComando.CommandText = "SPR_Cat_Estado_Consultar";
 
@@ -76,7 +77,13 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                 this.abrirConexion();
                 miDataSet = this.seleccionarInformacion(miComando);
                 this.cerrarConexion();
-                return miDataSet.Tables[0].Rows[0];
+                DataRow elDato = miDataSet.Tables[0].Rows[0];
+                Estado  elEstado = new Estado();
+                elEstado.Id = int.Parse(elDato["i_PK_idEstado"].ToString());
+                elEstado.Nombre = elDato["vc_nombreEstado"].ToString();
+                elEstado.Activo = int.Parse(elDato["i_activoEstado"].ToString());
+
+                return elEstado;
             }
             catch
             {
@@ -85,13 +92,12 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 
         }
 		//Listar  Estado
-        public DataTable ListarEstado(string filtro)
+        public List<Estado> ListarEstado(string filtro)
         {
             miComando.CommandText = "SPR_Cat_Estado_Listar";
 
             miComando.Parameters.Add("@filtro", SqlDbType.VarChar).Value = filtro;
-            
-            
+                      
 
             try
             {
@@ -99,7 +105,19 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                 this.abrirConexion();
                 miDataSet = this.seleccionarInformacion(miComando);
                 this.cerrarConexion();
-                return miDataSet.Tables[0];
+                DataTable dtLista = miDataSet.Tables[0];
+                List<Estado> laLista = new List<Estado>();
+                //
+                foreach (DataRow elDato in dtLista.Rows)
+                {
+                    Estado elEstado = new Estado();
+                    elEstado.Id = int.Parse(elDato["id"].ToString());
+                    elEstado.Nombre = elDato["nombre"].ToString();
+                    elEstado.Activo = int.Parse(elDato["activo"].ToString());
+                    laLista.Add(elEstado);
+                 
+                }
+                return laLista;
             }
             catch
             {

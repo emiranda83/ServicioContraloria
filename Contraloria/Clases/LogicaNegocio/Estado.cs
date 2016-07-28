@@ -74,6 +74,9 @@ namespace Contraloria.Clases.LogicaNegocio
             }
 
         }
+
+        public Estado()
+        { }
     }
 
  }
