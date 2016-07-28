@@ -113,9 +113,9 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                     Estado elEstado = new Estado();
                     elEstado.Id = int.Parse(elDato["id"].ToString());
                     elEstado.Nombre = elDato["nombre"].ToString();
-                    elEstado.Estado1 = int.Parse(elDato["estado1"].ToString());                    
+                    elEstado.Estado1 = int.Parse(elDato["estado"].ToString());                    
                     laLista.Add(elEstado);
-                 
+                  
                 }
                 return laLista;
             }

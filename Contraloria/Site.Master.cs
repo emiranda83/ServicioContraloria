@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Web.UI.HtmlControls;
+using Componentes.Sistemas.Clases;
 
 namespace Contraloria
 {
@@ -19,6 +20,8 @@ namespace Contraloria
 
         protected void Page_Init(object sender, EventArgs e)
         {
+            Conexion.laConexion.Usuario = "sa";
+            Conexion.laConexion.Contrasena = "sasa";
             // El código siguiente ayuda a proteger frente a ataques XSRF
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;

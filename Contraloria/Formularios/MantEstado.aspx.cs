@@ -20,9 +20,7 @@ namespace Contraloria.Formularios
             if (!this.IsPostBack)
             {
 
-                Conexion.laConexion.Usuario = "requisitos_wr";
-                Conexion.laConexion.Contrasena = "rqst.0515";
-
+              
                 CargarEstado();
             }
         }

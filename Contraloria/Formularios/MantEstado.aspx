@@ -75,10 +75,12 @@
       
          <asp:GridView ID="grdEstado" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdEstado_SelectedIndexChanging">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass ="btn btn-primary" />
+                <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass ="btn btn-primary" >
+<ControlStyle CssClass="btn btn-primary"></ControlStyle>
+                </asp:CommandField>
                 <asp:BoundField DataField="Id" HeaderText="ID" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre Estado" />
-                <asp:BoundField DataField="ActivoMostrar" HeaderText="Estado" />
+                <asp:BoundField DataField="EstadoMostrar" HeaderText="Estado" />
             </Columns>
             </asp:GridView>
     
