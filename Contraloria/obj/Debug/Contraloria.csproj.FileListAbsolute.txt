@@ -195,7 +195,6 @@ C:\github\ServicioContraloria\Contraloria\bin\System.Web.Http.WebHost.dll
 C:\github\ServicioContraloria\Contraloria\bin\System.Web.Optimization.dll
 C:\github\ServicioContraloria\Contraloria\bin\System.Web.Providers.dll
 C:\github\ServicioContraloria\Contraloria\bin\WebGrease.dll
-C:\github\ServicioContraloria\Contraloria\bin\stdole.dll
 C:\github\ServicioContraloria\Contraloria\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\github\ServicioContraloria\Contraloria\bin\System.Web.Optimization.xml
 C:\github\ServicioContraloria\Contraloria\bin\Antlr3.Runtime.pdb

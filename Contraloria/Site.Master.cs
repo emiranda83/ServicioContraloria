@@ -20,8 +20,8 @@ namespace Contraloria
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            Conexion.laConexion.Usuario = "sa";
-            Conexion.laConexion.Contrasena = "sasa";
+            Conexion.laConexion.Usuario = "sercontra_ow";
+            Conexion.laConexion.Contrasena = "cntr.0716";
             // El código siguiente ayuda a proteger frente a ataques XSRF
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;
