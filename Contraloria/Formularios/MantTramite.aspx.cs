@@ -103,5 +103,7 @@ namespace Contraloria.Formularios
             ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoTramite').removeClass('esconderElemento');$('#divNuevoTramite').addClass('mostrarElemento');});", true);
 
         }
+
+     
     }
 }

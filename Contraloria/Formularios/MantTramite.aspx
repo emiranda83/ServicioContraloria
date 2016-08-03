@@ -75,13 +75,23 @@
 
    
       
-         <asp:GridView ID="grdTramite" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdTramite_SelectedIndexChanging">
+         <asp:GridView ID="grdTramite" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdTramite_SelectedIndexChanging" BorderStyle="Groove">
+             <AlternatingRowStyle BackColor="#E3F2FD" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass ="btn btn-primary" />
-                <asp:BoundField DataField="Id" HeaderText="ID" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre Trámite" />
-                <asp:BoundField DataField="EstadoMostrar" HeaderText="Estado" />
+                <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass ="btn btn-primary" >
+<ControlStyle CssClass="btn btn-primary"></ControlStyle>
+                </asp:CommandField>
+                <asp:BoundField DataField="Id" HeaderText="ID" >
+                <HeaderStyle ForeColor="White" />
+                </asp:BoundField>
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre Trámite" >
+                <HeaderStyle ForeColor="White" />
+                </asp:BoundField>
+                <asp:BoundField DataField="EstadoMostrar" HeaderText="Estado" >
+                <HeaderStyle ForeColor="White" />
+                </asp:BoundField>
             </Columns>
+             <HeaderStyle BackColor="#1565C0" />
             </asp:GridView>
     
 
