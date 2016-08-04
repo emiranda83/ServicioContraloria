@@ -203,6 +203,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Formularios\FormularioSolicitud.aspx" />
     <Content Include="Formularios\MantEstado.aspx" />
+    <Content Include="Formularios\MantMedios.aspx" />
     <Content Include="Formularios\MantTramite.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -404,6 +405,13 @@
     </Compile>
     <Compile Include="Formularios\MantEstado.aspx.designer.cs">
       <DependentUpon>MantEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MantMedios.aspx.cs">
+      <DependentUpon>MantMedios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\MantMedios.aspx.designer.cs">
+      <DependentUpon>MantMedios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\MantTramite.aspx.cs">
       <DependentUpon>MantTramite.aspx</DependentUpon>
