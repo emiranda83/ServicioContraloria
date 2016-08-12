@@ -373,9 +373,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Clases\DAO\ServicioEstado.cs" />
+    <Compile Include="Clases\DAO\ServicioMedioNotificacion.cs" />
     <Compile Include="Clases\Integracion\GestorEstado.cs" />
+    <Compile Include="Clases\Integracion\GestorMedioNotificacion.cs" />
     <Compile Include="Clases\Integracion\GestorTramite.cs" />
     <Compile Include="Clases\LogicaNegocio\Estado.cs" />
+    <Compile Include="Clases\LogicaNegocio\MedioNotificacion.cs" />
     <Compile Include="Clases\LogicaNegocio\Tramite.cs" />
     <Compile Include="Clases\DAO\ServicioTramite.cs" />
     <Compile Include="Contact.aspx.cs">

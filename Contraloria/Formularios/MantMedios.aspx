@@ -24,7 +24,7 @@
 
 
 
-      <div id="divNuevoTramite"   class ="container show-top-margin separate-rows tall-rows esconderElemento"  >
+      <div id="divNuevoMedio"   class ="container show-top-margin separate-rows tall-rows esconderElemento"  >
   <h4>Mantenimiento Nuevo/Modificar</h4>
   
   <div class="row">
@@ -52,6 +52,7 @@
   <div class="row">
     <div class="col-xs-2"  > </div>
     <div class="col-xs-10" >  <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" OnClick="btn_Guardar_Click" /> </div>
+
   </div>
         <div class="row">
     <div class="col-xs-2"  > </div>
@@ -61,7 +62,7 @@
 
    
       
-         <asp:GridView ID="grdTramite" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdTramite_SelectedIndexChanging" BorderStyle="Groove">
+         <asp:GridView ID="grdMedio" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdTramite_SelectedIndexChanging" BorderStyle="Groove">
              <AlternatingRowStyle BackColor="#E3F2FD" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass ="btn btn-primary" >
