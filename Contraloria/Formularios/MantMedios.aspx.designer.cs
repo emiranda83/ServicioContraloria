@@ -49,13 +49,13 @@ namespace Contraloria.Formularios {
         protected global::System.Web.UI.WebControls.TextBox txt_Id;
         
         /// <summary>
-        /// Control txt_tramite.
+        /// Control txt_Medio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tramite;
+        protected global::System.Web.UI.WebControls.TextBox txt_Medio;
         
         /// <summary>
         /// Control cmb_estado.

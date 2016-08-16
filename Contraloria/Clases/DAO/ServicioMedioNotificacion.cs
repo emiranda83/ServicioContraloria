@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using Componentes.Sistemas.Clases;
 //using System.Linq;
 using System.Text;
+using Contraloria.Clases.LogicaNegocio;
 
 namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 {
@@ -65,7 +66,7 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 
         }
 		//Consultar  MedioNotificacion
-        public DataRow ConsultarMedioNotificacion(int i_PK_idMedio)
+        public MedioNotificacion ConsultarMedioNotificacion(int i_PK_idMedio)
         {
             miComando.CommandText = "SPR_Cat_MedioNotificacion_Consultar";
 
@@ -78,7 +79,15 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                 this.abrirConexion();
                 miDataSet = this.seleccionarInformacion(miComando);
                 this.cerrarConexion();
-                return miDataSet.Tables[0].Rows[0];
+                DataRow elDato= miDataSet.Tables[0].Rows[0];
+                MedioNotificacion elMedio = new MedioNotificacion();
+                elMedio.Id = int.Parse(elDato["i_PK_idMedio"].ToString());
+                elMedio.Nombre = elDato["vc_NombreMedio"].ToString();
+                elMedio.Estado = int.Parse(elDato["i_activoMedio"].ToString());
+
+                return elMedio;
+
+
             }
             catch
             {

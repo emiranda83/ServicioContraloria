@@ -218,4 +218,3 @@ C:\github\ServicioContraloria\Contraloria\bin\Microsoft.Owin.Security.Google.xml
 C:\github\ServicioContraloria\Contraloria\bin\Microsoft.Owin.Security.Twitter.xml
 C:\github\ServicioContraloria\Contraloria\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\github\ServicioContraloria\Contraloria\bin\Microsoft.Owin.Security.OAuth.xml
-C:\github\ServicioContraloria\Contraloria\bin\stdole.dll

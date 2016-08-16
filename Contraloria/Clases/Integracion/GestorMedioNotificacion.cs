@@ -41,7 +41,7 @@ namespace  SENASA.ContraloriaServicios.Integracion.Integracion.Catalogo
                 return elServicioMedioNotificacion.ModificarMedioNotificacion( i_PK_idMedio, vc_NombreMedio, i_activoMedio);
         }
 		//Consultar MedioNotificacion
-        public DataRow ConsultarMedioNotificacion(int i_PK_idMedio)
+        public MedioNotificacion ConsultarMedioNotificacion(int i_PK_idMedio)
         {
             using (ServicioMedioNotificacion elServicioMedioNotificacion = new ServicioMedioNotificacion())
                 return elServicioMedioNotificacion.ConsultarMedioNotificacion( i_PK_idMedio);

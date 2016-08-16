@@ -35,7 +35,7 @@
        
   <div class="row">
     <div class="col-xs-2"  >Medio: </div>
-    <div class="col-xs-10" > <asp:TextBox ID="txt_tramite" CssClass="form-control" runat="server"></asp:TextBox> </div>
+    <div class="col-xs-10" > <asp:TextBox ID="txt_Medio" CssClass="form-control" runat="server"></asp:TextBox> </div>
   </div>
 
            
@@ -62,7 +62,7 @@
 
    
       
-         <asp:GridView ID="grdMedio" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdTramite_SelectedIndexChanging" BorderStyle="Groove">
+         <asp:GridView ID="grdMedio" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdTramite_SelectedIndexChanging" BorderStyle="Groove" >
              <AlternatingRowStyle BackColor="#E3F2FD" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass ="btn btn-primary" >
