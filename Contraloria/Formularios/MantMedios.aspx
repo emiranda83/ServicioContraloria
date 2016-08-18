@@ -3,7 +3,7 @@
 
 
     
-     <h2><%: Title %>.</h2>
+     <h2><%: Title %>Mantenimiento Medios de Notificación</h2>
     <div class="container-fluid">
   
   
@@ -58,11 +58,8 @@
     <div class="col-xs-2"  > </div>
     <div class="col-xs-10" >   </div>
   </div>
-      </div>
-
-   
-      
-         <asp:GridView ID="grdMedio" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdTramite_SelectedIndexChanging" BorderStyle="Groove" >
+      </div>        
+         <asp:GridView ID="grdMedio" CssClass="table" runat="server" AllowPaging="True" Width="215px" AutoGenerateColumns="False" CellPadding="10" OnSelectedIndexChanging="grdMedio_SelectedIndexChanging" BorderStyle="Groove" >
              <AlternatingRowStyle BackColor="#E3F2FD" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass ="btn btn-primary" >
@@ -71,7 +68,7 @@
                 <asp:BoundField DataField="Id" HeaderText="ID" >
                 <HeaderStyle ForeColor="White" />
                 </asp:BoundField>
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre Trámite" >
+                <asp:BoundField DataField="Nombre" HeaderText="Medio de Notificación" >
                 <HeaderStyle ForeColor="White" />
                 </asp:BoundField>
                 <asp:BoundField DataField="EstadoMostrar" HeaderText="Estado" >

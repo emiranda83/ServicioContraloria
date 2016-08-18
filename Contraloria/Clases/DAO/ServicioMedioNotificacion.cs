@@ -30,33 +30,30 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
         { }
 
 		//Inserta  MedioNotificacion
-        public String InsertarMedioNotificacion(string vc_NombreMedio,int i_activoMedio)
+        public String InsertarMedioNotificacion(MedioNotificacion elMedio)
         {
             miComando.CommandText = "SPR_Cat_MedioNotificacion_insertar";
 
-            
-			miComando.Parameters.Add("@vc_NombreMedio", SqlDbType.VarChar).Value = vc_NombreMedio;
-            
-			miComando.Parameters.Add("@i_activoMedio", SqlDbType.Int).Value = i_activoMedio;
-            
-            
 
+            miComando.Parameters.Add("@vc_NombreMedio", SqlDbType.VarChar).Value = elMedio.Nombre;
+            
+			     
             respuesta = this.ejecutaSentencia(miComando);
             if (respuesta == "") respuesta = respuestaCorrecta;
             return respuesta;
 
         }
 		//Modificar  MedioNotificacion
-        public String ModificarMedioNotificacion(int i_PK_idMedio,string vc_NombreMedio,int i_activoMedio)
+        public String ModificarMedioNotificacion(MedioNotificacion elMedio)
         {
             miComando.CommandText = "SPR_Cat_MedioNotificacion_modificar";
 
-            
-			miComando.Parameters.Add("@i_PK_idMedio", SqlDbType.Int).Value = i_PK_idMedio;
-            
-			miComando.Parameters.Add("@vc_NombreMedio", SqlDbType.VarChar).Value = vc_NombreMedio;
-            
-			miComando.Parameters.Add("@i_activoMedio", SqlDbType.Int).Value = i_activoMedio;
+
+            miComando.Parameters.Add("@i_PK_idMedio", SqlDbType.Int).Value = elMedio.Id;
+
+            miComando.Parameters.Add("@vc_NombreMedio", SqlDbType.VarChar).Value = elMedio.Nombre;
+
+            miComando.Parameters.Add("@i_activoMedio", SqlDbType.Int).Value = elMedio.Estado;
             
             
 
@@ -96,7 +93,7 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
 
         }
 		//Listar  MedioNotificacion
-        public DataTable ListarMedioNotificacion(string filtro)
+        public List<MedioNotificacion> ListarMedioNotificacion(string filtro)
         {
             miComando.CommandText = "SPR_Cat_MedioNotificacion_Listar";
 
@@ -110,9 +107,23 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                 this.abrirConexion();
                 miDataSet = this.seleccionarInformacion(miComando);
                 this.cerrarConexion();
-                return miDataSet.Tables[0];
+                DataTable dtLista = miDataSet.Tables[0];
+                List<MedioNotificacion> laLista = new List<MedioNotificacion>();
+                
+                foreach (DataRow elDato in dtLista.Rows)
+                {
+                    MedioNotificacion elMedio = new MedioNotificacion();
+                    elMedio.Id= int.Parse(elDato["id"].ToString());
+                    elMedio.Nombre = elDato["nombreMedio"].ToString();
+                    elMedio.Estado = int.Parse(elDato["activoMedio2"].ToString());
+                    laLista.Add(elMedio);
+                }
+
+
+
+                return laLista;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
             }

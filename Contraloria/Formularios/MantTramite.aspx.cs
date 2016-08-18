@@ -19,9 +19,7 @@ namespace Contraloria.Formularios
             if (!this.IsPostBack)
             {
 
-             
-
-                CargarTramite();
+             CargarTramite();
             }
         }
 

@@ -34,11 +34,7 @@
  
 </div>
  
-
-
-
-
-      <div id="divNuevoTramite"   class ="container show-top-margin separate-rows tall-rows esconderElemento"  >
+  <div id="divNuevoTramite"   class ="container show-top-margin separate-rows tall-rows esconderElemento"  >
   <h4>Mantenimiento Nuevo/Modificar</h4>
   
   <div class="row">

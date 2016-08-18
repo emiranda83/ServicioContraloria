@@ -2,7 +2,6 @@
 using Contraloria.Clases.LogicaNegocio;
 using SENASA.ContraloriaServicios.Integracion.Integracion.Catalogo;
 using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,7 +35,7 @@ namespace Contraloria.Formularios
             CargarMedio();
         }
         /*****************************Llenado del Grid*********************************************/
-        protected void grdTramite_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        protected void grdMedio_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             MedioNotificacion elMedio = null;
             using (GestorMedioNotificacion elGestor = new GestorMedioNotificacion())
@@ -52,7 +51,39 @@ namespace Contraloria.Formularios
 
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
-            
+            string respuesta;
+
+            GestorMedioNotificacion elServicio = new GestorMedioNotificacion();
+            if (txt_Id.Text == "")
+            {
+                MedioNotificacion Medio = new MedioNotificacion();
+                respuesta = elServicio.InsertarMedioNotificacion(txt_Medio.Text);
+                CargarMedio();
+            }
+            else
+                respuesta = elServicio.ModificarMedioNotificacion(int.Parse(txt_Id.Text), txt_Medio.Text, int.Parse(cmb_estado.SelectedValue));
+            if (respuesta.Equals(Componentes.Sistemas.Clases.Global.elGlobal.RespuestaCorrecta))
+            {
+
+                ((SiteMaster)this.Master).MostrarMensaje("Datos Guardados");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoMedio').removeClass('mostrarElemento');$('#divNuevoMedio').addClass('esconderElemento');});", true);
+                //limpiar
+                CargarMedio();
+
+
+            }
+            else
+            {
+                ((SiteMaster)this.Master).MostrarMensaje("Error al insertar datos: " + respuesta, true);
+
+            }
+
+        
+        }
+
+        protected void btn_Nuevo_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(document).ready(function () {  $('#divNuevoMedio').removeClass('esconderElemento');$('#divNuevoMedio').addClass('mostrarElemento');});", true);
         }
     }
 }

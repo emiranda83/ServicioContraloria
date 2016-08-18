@@ -53,7 +53,7 @@ namespace Contraloria.Clases.LogicaNegocio
             }
         }
 
-        public  MedioNotificacion(int id, string nombre, int estado)
+        public MedioNotificacion(int id, string nombre, int estado)
         {
             this.id = id;
             this.nombre = nombre;
@@ -61,7 +61,7 @@ namespace Contraloria.Clases.LogicaNegocio
         }
 
 
-        public  MedioNotificacion(string nombre)
+        public MedioNotificacion(string nombre)
         {
             this.id = 0;
             this.nombre = Nombre;
