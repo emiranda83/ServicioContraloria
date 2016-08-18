@@ -8,7 +8,7 @@
   
   
   <div class="row">
-    <div class="col-xs-2"  >Filtro: </div>
+    <div class="col-xs-2"  >Filtro: </div> 
     <div class="col-xs-10" ><asp:TextBox ID="txt_Filtro" CssClass="form-control" runat="server"></asp:TextBox></div>
   </div>
   <div class="row">

@@ -118,9 +118,7 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Catalogo
                     elMedio.Estado = int.Parse(elDato["activoMedio2"].ToString());
                     laLista.Add(elMedio);
                 }
-
-
-
+                
                 return laLista;
             }
             catch (Exception ex)
