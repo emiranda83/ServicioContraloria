@@ -28,8 +28,8 @@
   <div class="row">
     <div class="col-xs-2"  >
         </div>
-    <div ID= "nuevo"class="col-xs-10"  >  <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" OnClick="btn_Buscar_Click" /> 
-           <asp:Button ID="btn_Nuevo" runat="server" Text="Nuevo" OnClick="btn_Nuevo_Click"  /></div>
+    <div ID= "nuevo"class="col-xs-10"  >  <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" OnClick="btn_Buscar_Click" CssClass="buttonborder" /> 
+           <asp:Button ID="btn_Nuevo" runat="server" Text="Nuevo" OnClick="btn_Nuevo_Click" CssClass="buttonborder"  /></div>
   </div>
  
 </div>

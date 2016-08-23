@@ -10,16 +10,16 @@
 namespace Contraloria.Formularios {
     
     
-    public partial class FormularioSolicitud {
+    public partial class Usuario {
         
         /// <summary>
-        /// Control txt_identificacion.
+        /// Control txt_Identificacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_identificacion;
+        protected global::System.Web.UI.WebControls.TextBox txt_Identificacion;
         
         /// <summary>
         /// Control txt_Nombre.
@@ -31,39 +31,21 @@ namespace Contraloria.Formularios {
         protected global::System.Web.UI.WebControls.TextBox txt_Nombre;
         
         /// <summary>
-        /// Control cmb_estado.
+        /// Control btn_Registro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmb_estado;
+        protected global::System.Web.UI.WebControls.Button btn_Registro;
         
         /// <summary>
-        /// Control txt_Valor.
+        /// Control btn_Cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Valor;
-        
-        /// <summary>
-        /// Control btn_Agregar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Agregar;
-        
-        /// <summary>
-        /// Control grdMedioNotificacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdMedioNotificacion;
+        protected global::System.Web.UI.WebControls.Button btn_Cancelar;
     }
 }
