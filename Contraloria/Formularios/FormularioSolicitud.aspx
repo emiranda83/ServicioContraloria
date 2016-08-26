@@ -91,7 +91,7 @@
 
   <div class="row ">
     <div class="col-xs-10 col-md-10" >    
-        <asp:TextBox ID="txt_Descripcion"  runat="server" Height="100px" TextMode="MultiLine" Width="813px"></asp:TextBox>  
+        <asp:TextBox ID="txt_Descripcion"  runat="server" Height="100px" TextMode="MultiLine" Width="709px"></asp:TextBox>  
    
   </div>
   </div>
