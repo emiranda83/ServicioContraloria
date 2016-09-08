@@ -193,7 +193,6 @@
     <Content Include="Content\SitioSenasa.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\toastr.min.js" />
-    <Content Include="Controllers\CtlFileUploader.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -393,13 +392,6 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\CtlFileUploader.ascx.cs">
-      <DependentUpon>CtlFileUploader.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controllers\CtlFileUploader.ascx.designer.cs">
-      <DependentUpon>CtlFileUploader.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -472,6 +464,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Imagenes\" />
   </ItemGroup>
   <PropertyGroup>

@@ -136,6 +136,7 @@ namespace Contraloria
             Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.options.positionClass = 'toast-top-full-width';toastr.info('" + mensaje + "', '');", true);
         }
 
+      
     }
 
 }

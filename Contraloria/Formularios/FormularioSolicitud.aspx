@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FormularioSolicitud.aspx.cs" Inherits="Contraloria.Formularios.FormularioSolicitud" %>
-<%@ Register src="../Controllers/CtlFileUploader.ascx" tagname="CtlFileUploader" tagprefix="uc1" %>
+<%--<%@ Register src="../Controllers/CtlFileUploader.ascx" tagname="CtlFileUploader" tagprefix="uc1" %>--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
@@ -11,7 +11,7 @@
     <h2>Formulario Contraloría de Servicios</h2>
      <div class="container-fluid">
 
-<%--*** Datos de Usuario *** --%>            
+         <%--****Confidencialidad****--%>            
     <div class="row ">
         <div class="col-xs-10">
     <h4 class=" alert-info">Datos de usuario</h4>  
@@ -28,7 +28,7 @@
     <div class="col-xs-10" > <asp:TextBox ID="txt_Nombre" CssClass="form-control" runat="server"></asp:TextBox> </div>
   </div>
 
-<%--*** Escoger los medios de notirficación, pueden ser varios *** --%>
+         <%--****Adjuntos****--%>
 <div class="row ">
     <div class="col-xs-10 col-md-10" >  
 <h4 class=" alert-info">Medios de Notificación</h4> </div>
@@ -46,7 +46,7 @@
     </div>    
         </div>
  
-<%--*** El grid se deja por fuera de los div *** --%>
+<%--****Calendario****--%>
  
                     <asp:GridView ID="grdMedioNotificacion" CssClass="table" runat="server" Width="215px" AutoGenerateColumns="False" CellPadding="5"  BorderStyle="Groove">
              <AlternatingRowStyle BackColor="#E3F2FD" />
@@ -65,7 +65,7 @@
                 <HeaderStyle BackColor="#1565C0" />
                 </asp:GridView>
 
-<%--*** Escoger el tipo de trámite*** --%>
+<%--****Confidencialidad****--%>
     <div class="row ">
     <div class="col-xs-10 col-md-10" >  
         <h4 class=" alert-info">Tipo de Trámite</h4>
@@ -83,7 +83,7 @@
         </div>
    </div>
 
-<%--*** Descripción de la Solicitud*** --%>
+<%--****Adjuntos****--%>
   <div class="row ">
     <div class="col-xs-10 col-md-10" >  
         <h4 class=" alert-info">Descripción</h4>
@@ -132,13 +132,15 @@
         <h4 class=" alert-info">Adjuntos</h4>
     </div>
     <div class="col-xs-10 col-md-10" >  
-        <asp:FileUpload ID="archivoSeleccionado" runat="server" />
-     <asp:Button ID="btnSubir" runat="server" Text="Subir" OnClick="btnSubir_Click" />
+        <asp:FileUpload ID="archivoSeleccionado" runat="server" Height="33px" Width="355px" />
+       
      </div>
       </div>
      <div class="row">
 
     <div class="col-xs-10 col-md-10"> 
+     <asp:TextBox ID="txtdescripcionAdjunto" runat="server" Height="33px" Width="258px" ToolTip="Descripción del adjunto"></asp:TextBox>
+     <asp:Button ID="btnSubir" runat="server" Text="Subir"   OnClick="btnSubir_Click" CssClass="buttonborder" />
     </div>
          </div>
 

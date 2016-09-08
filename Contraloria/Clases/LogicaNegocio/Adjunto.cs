@@ -8,13 +8,14 @@ namespace Contraloria.Clases.LogicaNegocio
     public class Adjunto
     {
         int id;
-        byte imagen;
+        byte[] imagen;
         string descripcion;
         string tipo;
+       
 
         public Adjunto() { }
 
-        public Adjunto(int id, byte imagen, string descripcion, string tipo) {
+        public Adjunto(int id, byte[] imagen, string descripcion, string tipo) {
 
             this.id = id;
             this.imagen = imagen;
@@ -22,7 +23,8 @@ namespace Contraloria.Clases.LogicaNegocio
             this.tipo = tipo;
 
         }
-        public int Id
+
+       public int Id
         {
             get
             {
@@ -61,7 +63,7 @@ namespace Contraloria.Clases.LogicaNegocio
             }
         }
 
-        public byte Imagen
+        public byte[] Imagen
         {
             get
             {
@@ -73,5 +75,7 @@ namespace Contraloria.Clases.LogicaNegocio
                 imagen = value;
             }
         }
+
+
     }
 }

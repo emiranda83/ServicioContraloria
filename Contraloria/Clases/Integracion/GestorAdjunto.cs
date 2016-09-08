@@ -28,7 +28,7 @@ namespace  SENASA.ContraloriaServicios.Integracion.Integracion.Solicitud
 
 
 		//Inserta Adjunto
-        public String InsertarAdjunto(string img_archivoAdjunto,string vc_descripcionAdjunto,string vc_tipoAdjunto)
+        public String InsertarAdjunto(byte[] img_archivoAdjunto,string vc_descripcionAdjunto,string vc_tipoAdjunto)
         {
             Adjunto elAdjunto = new Adjunto();
             elAdjunto.Imagen = img_archivoAdjunto;
@@ -36,7 +36,7 @@ namespace  SENASA.ContraloriaServicios.Integracion.Integracion.Solicitud
             elAdjunto.Tipo = vc_tipoAdjunto;
 
             using (ServicioAdjunto elServicioAdjunto = new ServicioAdjunto())
-            return elServicioAdjunto.InsertarAdjunto( img_archivoAdjunto, vc_descripcionAdjunto, vc_tipoAdjunto);
+            return elServicioAdjunto.InsertarAdjunto(elAdjunto);
         }
    }
 }

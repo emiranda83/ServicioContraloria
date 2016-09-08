@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using Componentes.Sistemas.Clases;
 //using System.Linq;
 using System.Text;
+using Contraloria.Clases.LogicaNegocio;
 
 namespace  SENASA.ContraloriaServicios.Logica.Servicios.Solicitud
 {
@@ -29,17 +30,18 @@ namespace  SENASA.ContraloriaServicios.Logica.Servicios.Solicitud
         { }
 
 		//Inserta  Adjunto
-        public String InsertarAdjunto(string img_archivoAdjunto,string vc_descripcionAdjunto,string vc_tipoAdjunto)
+        public String InsertarAdjunto(Adjunto elAdjunto)
         {
             miComando.CommandText = "SPR_Sol_Adjunto_insertar";
 
             
-			miComando.Parameters.Add("@img_archivoAdjunto", SqlDbType.VarChar).Value = img_archivoAdjunto;
+			miComando.Parameters.Add("@img_archivoAdjunto", SqlDbType.VarBinary).Value = elAdjunto.Imagen;
             
-			miComando.Parameters.Add("@vc_descripcionAdjunto", SqlDbType.VarChar).Value = vc_descripcionAdjunto;
+            miComando.Parameters.Add("@vc_descripcionAdjunto", SqlDbType.VarChar).Value = elAdjunto.Descripcion;
             
-			miComando.Parameters.Add("@vc_tipoAdjunto", SqlDbType.VarChar).Value = vc_tipoAdjunto;
-                      
+			miComando.Parameters.Add("@vc_tipoAdjunto", SqlDbType.VarChar).Value = elAdjunto.Tipo;
+
+            
 
             respuesta = this.ejecutaSentencia(miComando);
             if (respuesta == "") respuesta = respuestaCorrecta;
